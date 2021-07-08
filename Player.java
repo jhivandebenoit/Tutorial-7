@@ -39,10 +39,6 @@ public class Player {
         System.out.println("No. of runs: "+ getRuns());
     }
 
-    public void get_best_performance(){
-
-    }
-
     public String get_player_type(){
         return getPlayer_type();
     }
