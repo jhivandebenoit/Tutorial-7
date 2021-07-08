@@ -2,15 +2,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PlayerSelection {
-    private ArrayList<String> players = new ArrayList<String>();
+    private ArrayList<Player> players = new ArrayList<Player>();
     private Scanner scanner = new Scanner(System.in);
 
     public void menu() {
 
         String input;
         System.out.println("Enter code");
-        input = scanner.nextLine();
+
         while (true) {
+            input = scanner.nextLine();
             switch(input.toUpperCase()) {
                 case "A":
                     addPlayer();
@@ -18,13 +19,30 @@ public class PlayerSelection {
                 case "V":
                     viewPlayers();
                     break;
+                default:
+                    System.out.println("");
             }
         }
 
     }
     public void addPlayer() {
         System.out.println("Enter player name: ");
-        players.add(scanner.nextLine());
+        String name = scanner.nextLine();
+        System.out.println("Enter player Age: ");
+        int age = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Enter player type: ");
+        String type = scanner.nextLine();
+        System.out.println("Enter player runs: ");
+        int runs = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Enter player wickets: ");
+        int wickets = scanner.nextInt();
+
+        Player player = new Player(name,age,type,runs,wickets);
+        players.add(player);
+        System.out.println("player added");
+
 
 
     }
